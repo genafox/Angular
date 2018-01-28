@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title: string = 'kh';
+  appName: string = 'Knowledge Hub';
 
-  menuItems: any[] = [{
+  appMenu: any[] = [{
     title: "Documents",
     href: "/",
     icon: "library_books"

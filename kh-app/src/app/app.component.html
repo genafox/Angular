@@ -1,13 +1,12 @@
-<div class="example-container">
-	<mat-toolbar color="primary"
-	             class="example-toolbar">
+<div class="app-container">
+	<mat-toolbar color="primary">
 		<button mat-icon-button
 		        (click)="snav.toggle()"
 		        class="toggle-menu-icon-btn">
 			<i class="material-icons">menu</i>
 		</button>
 		<img src="../assets/logo-icon.png" />
-		<h1 class="app-name">Knowledge Hub</h1>
+		<h1 class="app-name">{{appName}}</h1>
 	</mat-toolbar>
 
 	<mat-sidenav-container class="sidenav-container">
@@ -15,7 +14,7 @@
 		             class="sidenav-menu">
 			<mat-nav-list>
 				<a mat-list-item
-				   *ngFor="let item of menuItems"
+				   *ngFor="let item of appMenu"
 				   href="{{item.href}}">
 					<i class="material-icons">{{item.icon}}</i>
 					<div class="sidenav-menuitem-text">
