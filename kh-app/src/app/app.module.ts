@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -48,6 +50,7 @@ import * as Constants from './app.constants'
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
 
     MatAutocompleteModule,
     MatButtonModule,
