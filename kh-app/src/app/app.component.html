@@ -1,33 +1,37 @@
 <div class="app-container">
-	<mat-toolbar color="primary">
-		<button mat-icon-button
-		        (click)="snav.toggle()"
-		        class="toggle-menu-icon-btn">
-			<i class="material-icons">menu</i>
-		</button>
-		<img src="../assets/logo-icon.png" />
-		<h1 class="app-name">{{appName}}</h1>
-	</mat-toolbar>
+	<div class="app-navbar mat-elevation-z6">
+		<mat-toolbar color="primary">
+			<button (click)="snav.toggle()"
+			        mat-icon-button
+			        style="height: 48px; width: 48px;">
+				<i class="material-icons">menu</i>
+			</button>
+			<img src="../assets/logo-icon.png" />
+			<h1 style="margin-left: 8px;">{{appName}}</h1>
+		</mat-toolbar>
+	</div>
+	<div class="app-content">
+		<mat-sidenav-container style="flex: 1;">
+			<mat-sidenav #snav
+			             style="min-width: 250px">
+				<mat-nav-list>
+					<a *ngFor="let item of appMenu"
+					   mat-list-item
+					   href="{{item.href}}">
+						<i class="material-icons">{{item.icon}}</i>
+						<div style="margin-left: 10px">
+							{{item.title}}
+						</div>
+					</a>
+				</mat-nav-list>
+			</mat-sidenav>
 
-	<mat-sidenav-container class="sidenav-container">
-		<mat-sidenav #snav
-		             class="sidenav-menu">
-			<mat-nav-list>
-				<a mat-list-item
-				   *ngFor="let item of appMenu"
-				   href="{{item.href}}">
-					<i class="material-icons">{{item.icon}}</i>
-					<div class="sidenav-menuitem-text">
-						{{item.title}}
-					</div>
-				</a>
-			</mat-nav-list>
-		</mat-sidenav>
-
-		<mat-sidenav-content>
-
-			<kh-chat></kh-chat>
-
-		</mat-sidenav-content>
-	</mat-sidenav-container>
+			<mat-sidenav-content>
+				<div>
+					<h1>Notifications</h1>
+				</div>
+				<kh-chat></kh-chat>
+			</mat-sidenav-content>
+		</mat-sidenav-container>
+	</div>
 </div>
