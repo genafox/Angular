@@ -2,17 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { HubConnection } from '@aspnet/signalr-client';
 
 @Component({
-  selector: 'kh-chat',
-  templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css']
+  selector: 'kh-message-form',
+  templateUrl: './message-form.component.html',
+  styleUrls: ['./message-form.component.css']
 })
-export class ChatComponent implements OnInit {
+export class MessageFormComponent implements OnInit {
 
   private hubConnection: HubConnection;
   userName: string = '';
   message: string = '';
   messages: string[] = [];
-
 
   constructor() { }
 
